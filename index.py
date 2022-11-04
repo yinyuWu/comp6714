@@ -2,6 +2,7 @@ import os
 import sys
 import string
 import json
+import nltk
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk import word_tokenize, pos_tag
 
@@ -105,6 +106,8 @@ class Index():
 
 
 if __name__ == "__main__":
+    nltk.download('wordnet', quiet=True)
+    nltk.download('punkt', quiet=True)
     document_folder = sys.argv[1]
     indexes_folder = sys.argv[2]
     index_builder = Index()
